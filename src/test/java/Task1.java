@@ -3,41 +3,44 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 import static java.lang.Thread.sleep;
+import static org.testng.Assert.*;
 
 public class Task1 {
 
-    private Object By;
+    /*private Object By;*/
 
     @Test
-    public void Task1 () throws InterruptedException {
+    public void buttonTest() throws InterruptedException {
 
-        WebDriver driver = new ChromeDriver();
-        System.out.println("Started");
-        sleep(1000);
+
+         WebDriver driver = new ChromeDriver();
+
         String url = "https://the-internet.herokuapp.com/add_remove_elements/";
 
         driver.get(url);
 
-        driver.manage().window().maximize();
-
-        sleep(1000);
-
-        System.out.println("Page is opened");
-        try {
-            sleep(2000);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
         WebElement addButton = driver.findElement(org.openqa.selenium.By.cssSelector("button"));
-        sleep(5000);
+        assertTrue(addButton.isDisplayed());
+        sleep(100);
         addButton.click();
-        sleep(5000);
-       WebElement deleteButton = driver.findElement(org.openqa.selenium.By.className("added-manually"));
-       deleteButton.click();
+        sleep(100);
+        WebElement deleteButton = driver.findElement(org.openqa.selenium.By.className("added-manually"));
+        sleep(100);
+        Assert.assertTrue(driver.findElement(org.openqa.selenium.By.className("added-manually")).isDisplayed(),"Visible");
+        sleep(100);
+
+        deleteButton.click();
+       Assert.assertFalse(driver.findElement(org.openqa.selenium.By.className("added-manually")).isDisplayed(),"Not visible");
+        sleep(100);
+   driver.close();
 
 
     }
+
 }
