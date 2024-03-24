@@ -24,8 +24,9 @@ sleep(100);
     }
 
   @AfterMethod(alwaysRun = true)
-        public void closeDriver(){
+        public void closeDriver() throws InterruptedException {
         if (Objects.nonNull(driver)){
+            sleep(300);
             driver.quit();
         }
     }
