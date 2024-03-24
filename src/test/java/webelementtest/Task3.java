@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 
 public class Task3 extends BaseTest {
 
-    /*private Object By;*/
+
 
     @Test
     public void drpTest() throws InterruptedException {
