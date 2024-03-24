@@ -1,4 +1,4 @@
-
+package webelementtest;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,14 +7,14 @@ import org.testng.annotations.Test;
 
 import static java.lang.Thread.sleep;
 
-public class Task5 {
+public class Task5 extends BaseTest {
 
     private Object By;
 
     @Test
     public void loginTest() throws InterruptedException {
 
-        WebDriver driver = new ChromeDriver();
+
         System.out.println("Started");
         sleep(1000);
         String url = "https://the-internet.herokuapp.com/login";

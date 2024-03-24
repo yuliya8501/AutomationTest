@@ -1,3 +1,4 @@
+package webelementtest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ import java.time.Duration;
 import static java.lang.Thread.sleep;
 import static org.testng.Assert.*;
 
-public class Task1 {
+public class Task1 extends BaseTest {
 
     /*private Object By;*/
 
@@ -19,7 +20,7 @@ public class Task1 {
     public void buttonTest() throws InterruptedException {
 
 
-         WebDriver driver = new ChromeDriver();
+
 
         String url = "https://the-internet.herokuapp.com/add_remove_elements/";
 
@@ -38,7 +39,7 @@ public class Task1 {
         deleteButton.click();
        Assert.assertFalse(driver.findElement(org.openqa.selenium.By.className("added-manually")).isDisplayed(),"Not visible");
         sleep(100);
-   driver.close();
+
 
 
     }

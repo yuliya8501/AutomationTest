@@ -1,3 +1,4 @@
+package webelementtest;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,14 +8,14 @@ import org.testng.annotations.Test;
 
 import static java.lang.Thread.sleep;
 
-public class Task4 {
+public class Task4 extends BaseTest {
 
     private Object By;
 
     @Test
     public void inputTest() throws InterruptedException {
 
-        WebDriver driver = new ChromeDriver();
+
         System.out.println("Started");
         sleep(1000);
         String url = "https://the-internet.herokuapp.com/inputs";
@@ -37,7 +38,7 @@ public class Task4 {
         sleep(500);
         System.out.println("Entered text is: " + val);
         sleep(100);
-        driver.quit();
+
 
 
 
